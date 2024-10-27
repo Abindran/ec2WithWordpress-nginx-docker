@@ -45,9 +45,9 @@ services:
         image: wordpress
         container_name: "$domain"
         restart: always
-        depends-on:
+        depends_on:
             - init-db
-        port:
+        ports:
             - "$port:80"
         environment:
             WORDPRESS_DB_HOST: db
@@ -70,4 +70,4 @@ compose_file="${domain}-compose.yml"
 
 echo "$compose_content" > "$compose_file"
 
-docker compose -f "$compose_file" up -d
+docker-compose -f "$compose_file" up -d
