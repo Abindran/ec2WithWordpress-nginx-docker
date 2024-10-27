@@ -7,8 +7,7 @@ echo "Updating package index..."
 sudo yum update -y && echo "Package index updated."
 
 # Install Docker
-sudo yum install -y amazon-linux-extras
-sudo amazon-linux-extras install docker && echo "Docker Installed"
+sudo yum install docker && echo "Docker Installed"
 sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose && echo "Docker compose Installed"
 
